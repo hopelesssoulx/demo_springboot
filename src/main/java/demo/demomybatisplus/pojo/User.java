@@ -9,6 +9,10 @@ public class User {
     private Integer age;
     private String email;
 
+    public User() {
+
+    }
+
     public User(Long id, String name, Integer age, String email) {
         this.id = id;
         this.name = name;

@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
+import demo.common.CommonResponse;
 import demo.demomybatisplus.pojo.User;
 import demo.demomybatisplus.service.UserService;
 
@@ -25,6 +26,12 @@ public class UserController {
     @GetMapping("/getUsers")
     Object getUsers() {
         return userService.getUsers();
+    }
+
+    // r
+    @GetMapping("/getUsers2")
+    CommonResponse getUsers2() {
+        return userService.getUsers2();
     }
 
     // r

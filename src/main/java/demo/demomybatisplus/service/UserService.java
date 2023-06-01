@@ -2,6 +2,7 @@ package demo.demomybatisplus.service;
 
 import com.baomidou.mybatisplus.extension.service.IService;
 
+import demo.common.CommonResponse;
 import demo.demomybatisplus.pojo.User;
 
 /**
@@ -10,6 +11,8 @@ import demo.demomybatisplus.pojo.User;
 public interface UserService extends IService<User> {
 
     Object getUsers();
+
+    CommonResponse getUsers2();
 
     Object getUserById(Long id);
 

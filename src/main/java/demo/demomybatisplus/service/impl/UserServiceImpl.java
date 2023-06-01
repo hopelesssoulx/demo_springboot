@@ -5,6 +5,7 @@ import org.springframework.stereotype.Service;
 
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 
+import demo.common.CommonResponse;
 import demo.demomybatisplus.mapper.UserMapper;
 import demo.demomybatisplus.pojo.User;
 import demo.demomybatisplus.service.UserService;
@@ -22,6 +23,11 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements Us
     @Override
     public Object getUsers() {
         return userMapper.selectList(null);
+    }
+
+    @Override
+    public CommonResponse getUsers2() {
+        return CommonResponse.success(userMapper.selectList(null));
     }
 
     @Override
