@@ -1,5 +1,6 @@
 package demo.demomybatisplus.service.impl;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
@@ -14,5 +15,33 @@ import demo.demomybatisplus.service.UserService;
  */
 @Service
 public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements UserService {
+
+    @Autowired
+    private UserMapper userMapper;
+
+    @Override
+    public Object getUsers() {
+        return userMapper.selectList(null);
+    }
+
+    @Override
+    public Object getUserById(Long id) {
+        return userMapper.selectById(id);
+    }
+
+    @Override
+    public void addUser(User user) {
+        userMapper.insert(user);
+    }
+
+    @Override
+    public void deleteUserById(Long id) {
+        userMapper.deleteById(id);
+    }
+
+    @Override
+    public void updateUserById(User user) {
+        userMapper.updateById(user);
+    }
 
 }

@@ -9,4 +9,13 @@ import demo.demomybatisplus.pojo.User;
  */
 public interface UserService extends IService<User> {
 
+    Object getUsers();
+
+    Object getUserById(Long id);
+
+    void addUser(User user);
+
+    void deleteUserById(Long id);
+
+    void updateUserById(User user);
 }
